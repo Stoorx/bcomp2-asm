@@ -1,5 +1,6 @@
 package io.stoorx.bcomp2asm
 
+import io.stoorx.bcomp2asm.compilers.Compiler
 import io.stoorx.bcomp2asm.statements.Statement
 
 class Program {
