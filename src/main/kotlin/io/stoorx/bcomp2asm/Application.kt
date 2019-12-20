@@ -1,3 +1,9 @@
 package io.stoorx.bcomp2asm
 
-fun main() = println("Hello BCOMP2")
+import io.stoorx.bcomp2asm.statements.instructions.nop
+
+fun main() {
+    Program().asm {
+        nop()
+    }.compile(Compiler())
+}
