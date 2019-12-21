@@ -1,10 +1,11 @@
+@file:Suppress("EXPERIMENTAL_UNSIGNED_LITERALS", "EXPERIMENTAL_API_USAGE")
+
 package io.stoorx.bcomp2asm.passes
 
 import io.stoorx.bcomp2asm.Program
 import io.stoorx.bcomp2asm.statements.Statement
 
-@ExperimentalUnsignedTypes
-class AddressSetPass : Pass() {
+class AddressSetPass : Pass {
     override fun run(program: Program) {
         program.statements.fold(AddressSetPassState()) { state, statement ->
             statement.process(this)
@@ -19,7 +20,7 @@ class AddressSetPass : Pass() {
 
 }
 
-private data class AddressSetPassState @ExperimentalUnsignedTypes constructor(
+private data class AddressSetPassState(
     val currentAddress: ULong = 0u
 ) {
     val statementsList: MutableList<Statement> = ArrayList()
